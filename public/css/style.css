@@ -1,0 +1,221 @@
+*
+{
+    font-family: 'Roboto', sans-serif;
+}
+body
+{
+    background: #ebe8e8;
+}
+.navbar
+{
+    position: absolute;
+    height: 12%;
+    display: flex;
+    align-items: center;
+    padding: 0 5%;
+    background: #ffffff;
+    top: 0;
+    right: 0;
+    left: 0;
+}
+.navbar .logo img
+{
+    height: 50px;
+}
+.navbar nav
+{
+    flex: 1;
+    text-align: right;
+}
+.navbar nav ul li
+{
+    list-style: none;
+    display: inline-block;
+}
+.navbar nav ul li a,
+.navbar nav ul li i
+{
+    text-decoration: none;
+    font-size: 20px;
+    padding: 0 20px;
+    color: #615e5e;
+}
+.navbar nav ul li a:hover,
+.navbar nav ul li i:hover
+{
+    color: #a55b29;
+}
+.content
+{
+   position: absolute;
+    top: 20%;
+    left: 35%;
+    right: 0;
+}
+.content img
+{
+    margin-left: 20%;
+}
+.content .logo2
+{
+    width: 70px;
+}
+.content .search
+{
+    margin-top: 30px;
+    margin-left: 2.5%;
+}
+.content h1
+{
+    font-size: 50px;
+}
+.content .search form input[type=text] 
+{
+    padding: 10px;
+    font-size: 14px;
+    border: none;
+    float: left;
+    width: 30%;
+    background: #f1f1f1;
+    border: 2px solid #615e5e;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+  }
+  
+  /* Style the submit button */
+   .content .search form button
+   {
+    float: left;
+    width: 13%;
+    padding: 10px;
+    background: #a55b29;
+    color: white;
+    font-size: 14px;
+    border: 2px solid #615e5e;
+    border-left: none; /* Prevent double borders */
+    cursor: pointer;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+  }
+  
+  .content .search form button:hover 
+  {
+    background: #615e5e;
+  }
+  
+  /* Clear floats */
+  .content .search::after 
+  {
+    content: "";
+    clear: both;
+    display: table;
+  }
+.footer
+{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.login
+{
+    position: absolute;
+    top: 20%;
+    left: 37%;
+}
+.register
+{
+    position: absolute;
+    top: 20%;
+    left: 25%;
+}
+.register form .grid
+{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 90px;
+}
+.login input,
+.register input,
+.register select
+{
+    width: 110%;
+    padding: 10px;
+    border: 2px solid #615e5e;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+.register select
+{
+    width: 118%;
+    padding: 10px;
+    border: 2px solid #615e5e;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+.login button
+{
+    width: 119%;
+    padding: 10px;
+    font-size: 16px;
+    background: #a55b29;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+}.register button
+{
+    width: 69%;
+    padding: 10px;
+    font-size: 16px;
+    background: #a55b29;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+}
+.login button:hover,
+.register button:hover
+{
+    background: #615e5e;
+    border: none;
+}
+.login h1
+{
+    margin-left: 33%;    
+}
+.register h1
+{
+    margin-left: 17%;
+}
+.contactus
+{
+    position: absolute;
+    top: 70%;
+    left: 37%;
+}
+label::after
+{
+    content:  " *";
+    color: #ff0000;
+}
+.dashboard
+{
+    position: absolute;
+    top:  20%;
+    left: 27%;
+}
+.alert-message .green
+{
+    padding: 5px;
+    background: #85db70;
+    color: #33ff00;
+}
+.alert-message .red
+{
+    padding: 5px;
+    background: #db7070;
+    color: #ff0000;
+}
