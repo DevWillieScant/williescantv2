@@ -22,11 +22,6 @@ class Main extends Controller
         return view('login');
     }
 
-    public function checkemail()
-    {
-        return view('verify');
-    }
-
     public function register()
     {
         return view('register');
