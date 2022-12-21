@@ -219,3 +219,41 @@ label::after
     background: #db7070;
     color: #ff0000;
 }
+
+.message-card{
+    position: absolute;
+    left: 15%;
+    top: 30%;
+    width: 60%;
+    height: 30%;
+    padding: 5%;
+    background-color: white;
+}
+
+.email-icons a{
+    display: inline-flex;
+    width: 50px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 25px;
+    margin: 10px;
+    box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+}
+
+.email-icons a i{
+    transition: all 0.3s linear;
+}
+
+.email-icons a:hover i{
+    transform: scale(1.5);
+}
+
+.email-icons a:nth-child(1){
+    color: #430297;
+}
+
+.email-icons a:nth-child(2){
+    color: #3e65cf;
+}

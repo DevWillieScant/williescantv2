@@ -31,4 +31,8 @@
         <p>© 2022 Willie Scant Company. All Rights Reserved</p>
     </div>
 </body>
+
+<script>
+</script>
+
 </html>
