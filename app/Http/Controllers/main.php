@@ -27,6 +27,11 @@ class Main extends Controller
         return view('register');
     }
 
+    public function message()
+    {
+        return view('message');
+    }
+
     public function registration(Request $request)
     {
         $request->validate
@@ -56,7 +61,7 @@ class Main extends Controller
             Mail::to($request->email)->send(new EmailVerificationMail($user));
             if($res)
             {
-                return back()->with('success', 'You have registered successfully. Please check your email for a verification link.');
+                return redirect('message');
             }
 
             else

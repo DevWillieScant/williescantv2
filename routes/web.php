@@ -7,6 +7,7 @@ use App\Http\Controllers\Main;
     Route::get('/login', [Main::class, 'login'])->middleware('alreadyLoggedIn');
     Route::get('/register', [Main::class, 'register'])->middleware('alreadyLoggedIn');
     Route::post('/registration', [Main::class, 'registration'])->name('registration');
+    Route::get('/message', [Main::class, 'message']);
     Route::post('/loginuser', [Main::class, 'loginuser'])->name('loginuser');
     Route::get('/dashboard', [Main::class, 'dashboard'])->middleware('isLoggedIn');
     Route::get('/logout', [Main::class, 'logout']);
