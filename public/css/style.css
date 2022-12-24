@@ -47,7 +47,7 @@ body
 }
 .content
 {
-   position: absolute;
+   position:absolute;
     top: 20%;
     left: 35%;
     right: 0;
@@ -80,6 +80,7 @@ body
     border: 2px solid #615e5e;
     border-top-left-radius: 25px;
     border-bottom-left-radius: 25px;
+    text-align: center;
   }
   
   /* Style the submit button */
@@ -92,7 +93,7 @@ body
     color: white;
     font-size: 14px;
     border: 2px solid #615e5e;
-    border-left: none; /* Prevent double borders */
+    border-left:none; /* Prevent double borders */
     cursor: pointer;
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
