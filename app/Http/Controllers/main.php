@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
-use Hash;
+use Illuminate\Support\Facades\Hash;
 use Session;
 use Mail;
 use App\Mail\EmailVerificationMail;
@@ -27,7 +27,12 @@ class Main extends Controller
         return view('register');
     }
 
-    public function message()
+    public function popup()
+    {
+        return view('popup');
+    }
+    
+      public function message()
     {
         return view('message');
     }
