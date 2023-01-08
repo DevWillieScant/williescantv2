@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
-use Hash;
+use Illuminate\Support\Facades\Hash;
 use Session;
 use Mail;
 use App\Mail\EmailVerificationMail;
@@ -16,15 +16,10 @@ class Main extends Controller
     {
         return view('index');
     }
-    
-    public function login()
+ 
+      public function message()
     {
-        return view('login');
-    }
-
-    public function register()
-    {
-        return view('register');
+        return view('message');
     }
 
     public function registration(Request $request)
@@ -56,7 +51,7 @@ class Main extends Controller
             Mail::to($request->email)->send(new EmailVerificationMail($user));
             if($res)
             {
-                return back()->with('success', 'You have registered successfully. Please check your email for a verification link.');
+                return redirect('message');
             }
 
             else
