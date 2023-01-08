@@ -16,22 +16,7 @@ class Main extends Controller
     {
         return view('index');
     }
-    
-    public function login()
-    {
-        return view('login');
-    }
-
-    public function register()
-    {
-        return view('register');
-    }
-
-    public function popup()
-    {
-        return view('popup');
-    }
-    
+ 
       public function message()
     {
         return view('message');
