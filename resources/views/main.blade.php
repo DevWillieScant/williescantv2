@@ -39,7 +39,7 @@
         <img src="{{url('images/logo.png')}}" alt="Willie Scant">
 
         <h2>Registration Form</h2>
-        <form action="regUser" method="post">
+        <form action="{{route('registration')}}" method="post">
             @If(Session::has('success'))
             <div class="alert-message green">
                 {{Session::get('success')}}
@@ -75,7 +75,7 @@
         <img src="{{url('images/logo.png')}}" alt="Willie Scant">
 
         <h2>Login</h2>
-        <form action="logUser" method="post">
+        <form action="{{route('loginuser')}}" method="post">
             @If(Session::has('success'))
                 <div class="alert-message green">
                     {{Session::get('success')}}
