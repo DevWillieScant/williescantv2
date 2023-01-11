@@ -53,7 +53,7 @@
             @csrf
             <div class="grid">
                 <label for="username">Username</label>
-                <input type="text" name="username" id="username" placeholder="Username" value="{{old('phone_number')}}" required><br>
+                <input type="text" name="username" id="username" placeholder="Username" value="{{old('username')}}" required><br>
                 <label for="phone_number">Phone Number</label>
                 <input type="text" name="phone_number" id="phone_number" placeholder="Phone Number" value="{{old('phone_number')}}" required><br>
                 <label for="email">Email</label>
@@ -111,6 +111,20 @@
         document.querySelector('.bg-modal, .modal-bg').style.display = 'none';
     });
 
+    $(function (){
+        $('#signup').submit(function(e){
+            e.preventDefault();
+            let formData = $(this).serializeArray();
+            $.ajax({
+                method: "POST",
+                headers: {
+                    Accept: "application/json"
+                },
+                url: "{{route('registration')}}",
+                data: formData
+            })
+        })
+    });
    </script>
 
 </body>
