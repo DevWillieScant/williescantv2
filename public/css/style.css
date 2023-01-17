@@ -291,7 +291,7 @@ label::after
     height: 50px;
 }
 
-.close{
+.close, .exit{
    position: absolute;
     top: 0;
     right: 14px;

@@ -4,7 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <title>Willie Scant</title>
+    <link rel="manifest" href="{{url('images/site.webmanifest')}}">
+    <link rel="shortcut icon" href="{{url('images/favicon.ico')}}">
+    <link rel="icon" href="{{url('images/favicon.ico')}}" type="image/x-icon">
+
+
     <link rel="stylesheet" href="{{url('css/style.css')}}">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -71,7 +77,7 @@
     <div class="modal-bg">
      <div class="modal-content">
 
-        <div class="close">+</div>
+        <div class="exit">+</div>
         <img src="{{url('images/logo.png')}}" alt="Willie Scant">
 
         <h2>Login</h2>
@@ -92,6 +98,7 @@
             <label for="password">Password<span></span></label><br>
             <input type="password" placeholder="Password" name="password" value="{{old('password')}}" required><br>
             <button type="submit">Login</button><br>
+            <h2>Don't have an account?</h2>
         </form>
      </div>
    </div>
@@ -108,7 +115,12 @@
 
     document.querySelector('.close').addEventListener('click', function()
     {
-        document.querySelector('.bg-modal, .modal-bg').style.display = 'none';
+        document.querySelector('.bg-modal').style.display = 'none';
+    });
+
+    document.querySelector('.exit').addEventListener('click', function()
+    {
+        document.querySelector('.modal-bg').style.display = 'none';
     });
 
     $(function (){
