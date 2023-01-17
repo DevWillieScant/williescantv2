@@ -4,7 +4,7 @@
 }
 body
 {
-    background: #ebe8e8;
+    background: #f1f1f2;
 }
 .navbar
 {
@@ -13,7 +13,7 @@ body
     display: flex;
     align-items: center;
     padding: 0 5%;
-    background: #ffffff;
+    background: #e6e7e8;
     top: 0;
     right: 0;
     left: 0;
@@ -78,8 +78,7 @@ body
     width: 30%;
     background: #f1f1f1;
     border: 2px solid #615e5e;
-    border-top-left-radius: 25px;
-    border-bottom-left-radius: 25px;
+    border-radius: 25px;
     text-align: center;
   }
   
@@ -117,7 +116,7 @@ body
     bottom: 0;
     left: 0;
     right: 0;
-    background: #ffffff;
+    background: #e6e7e8;
     display: flex;
     align-items: center;
     justify-content: center;

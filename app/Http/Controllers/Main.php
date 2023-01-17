@@ -27,24 +27,19 @@ class Main extends Controller
         $request->validate
         (
             [
-                'first_name'=>'required',
-                'last_name'=>'required',
+                
                 'username'=>'required',
-                'password'=>'required|min:8|max:20',
-                'email'=>'required|email|unique:users',
                 'phone_number'=>'required',
-                'user_role'=>'required'
+                'email'=>'required|email|unique:users',
+                'password'=>'required|min:8|max:20'
             ]
         );
 
             $user = new User();
-            $user -> first_name = $request->first_name;
-            $user -> last_name = $request->last_name;
             $user -> username = $request->username;
-            $user -> password = Hash::make($request->password) ;
-            $user -> email = $request->email;
             $user -> phone_number = $request->phone_number;
-            $user -> user_role = $request->user_role;
+            $user -> email = $request->email;
+            $user -> password = Hash::make($request->password) ;
             $user-> email_verification_code = Str::random(40);
             $res = $user->save();
 
