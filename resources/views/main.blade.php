@@ -29,6 +29,24 @@
             <ul>
                 <li><a href="#" id="login">LOGIN</a></li>
                 <li><i class="fas fa-th"></i></li>
+                <div id="dropdown" class="dropdown-content">
+                    <table>
+                        <tr>
+                            <th><img src="{{url('images/logo.png')}}" ></th>
+                            <th><a href="">Health</a></th>
+                            <th><a href="">Clothing</a></th>
+                            <th><a href="">Education</a></th>
+                            <th><a href="">Innovation</a></th>
+                        </tr>
+                        <tr>
+                            <th><img src="{{url('images/logo.png')}}" ></th>
+                            <th><a href="">Food</a></th>
+                            <th><a href="">Security</a></th>
+                            <th><a href="">Transport</a></th>
+                            <th><a href="">Health</a></th>
+                        </tr>
+                    </table>
+                </div>
             </ul>
         </nav>
     </div>
