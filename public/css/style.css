@@ -27,17 +27,25 @@ body
     flex: 1;
     text-align: right;
 }
+
 .navbar nav ul li
 {
     list-style: none;
     display: inline-block;
 }
+
+.navbar nav ul li a{
+    border-left: 2px solid #fff;
+    border-right: 2px solid #fff;
+
+}
+
 .navbar nav ul li a,
 .navbar nav ul li i
 {
     text-decoration: none;
     font-size: 20px;
-    padding: 0 20px;
+    padding: 30px 20px;
     color: #615e5e;
 }
 .navbar nav ul li a:hover,
@@ -113,6 +121,7 @@ body
 .footer
 {
     position: absolute;
+    height: 6%;
     bottom: 0;
     left: 0;
     right: 0;
@@ -127,18 +136,7 @@ body
     top: 20%;
     left: 37%;
 }
-.register
-{
-    position: absolute;
-    top: 20%;
-    left: 25%;
-}
-/* .register form .grid
-{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 90px;
-} */
+
 .login input,
 .modal-content input,
 .modal-content select

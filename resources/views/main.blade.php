@@ -9,7 +9,10 @@
     <link rel="manifest" href="{{url('images/site.webmanifest')}}">
     <link rel="shortcut icon" href="{{url('images/favicon.ico')}}">
     <link rel="icon" href="{{url('images/favicon.ico')}}" type="image/x-icon">
-
+    <link rel="apple-touch-icon" sizes="180x180" href="{{url('images/apple-touch-icon.png')}}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{url('images/favicon-32x32.png')}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{url('images/favicon-16x16.png')}}">
+    
 
     <link rel="stylesheet" href="{{url('css/style.css')}}">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
@@ -25,7 +28,6 @@
         <nav>
             <ul>
                 <li><a href="#" id="login">LOGIN</a></li>
-                <li><a href="#" id="signup">SIGN UP</a></li>
                 <li><i class="fas fa-th"></i></li>
             </ul>
         </nav>
@@ -98,21 +100,27 @@
             <label for="password">Password<span></span></label><br>
             <input type="password" placeholder="Password" name="password" value="{{old('password')}}" required><br>
             <button type="submit">Login</button><br>
-            <h2>Don't have an account?</h2>
+            <h2>Don't have an account? <a href="#" id="signup">Register</a> </h2>
         </form>
      </div>
    </div>
 
-   <script>
 
-    document.getElementById('signup').addEventListener('click', function(){
-        document.querySelector('.bg-modal').style.display = 'flex';
-    });
+
+   <script>
 
     document.getElementById('login').addEventListener('click', function(){
         document.querySelector('.modal-bg').style.display = 'flex';
     });
 
+    document.getElementById('signup').addEventListener('click', function(){
+        document.querySelector('.modal-bg').style.display = 'none';
+
+        document.querySelector('.bg-modal').style.display = 'flex';
+    });
+
+
+    // Closes the modals
     document.querySelector('.close').addEventListener('click', function()
     {
         document.querySelector('.bg-modal').style.display = 'none';
@@ -137,6 +145,7 @@
             })
         })
     });
+
    </script>
 
 </body>
