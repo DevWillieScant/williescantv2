@@ -21,35 +21,46 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="navbar">
-        <div class="logo">
-            <a href="/"><img src="{{url('images/logo.png')}}" alt="Not Found"></a>
-        </div>
-        <nav>
-            <ul>
+    <nav>
+        <div class="navbar">
+            <div class="logo">
+                <a href="/"><img src="{{url('images/logo.png')}}" alt="Not Found"></a>
+            </div>
+            <ul class="nav-links">
                 <li><a href="#" id="login">LOGIN</a></li>
-                <li><i class="fas fa-th"></i></li>
-                <div id="dropdown" class="dropdown-content">
-                    <table>
-                        <tr>
-                            <th><img src="{{url('images/logo.png')}}" ></th>
-                            <th><a href="">Health</a></th>
-                            <th><a href="">Clothing</a></th>
-                            <th><a href="">Education</a></th>
-                            <th><a href="">Innovation</a></th>
-                        </tr>
-                        <tr>
-                            <th><img src="{{url('images/logo.png')}}" ></th>
-                            <th><a href="">Food</a></th>
-                            <th><a href="">Security</a></th>
-                            <th><a href="">Transport</a></th>
-                            <th><a href="">Health</a></th>
-                        </tr>
-                    </table>
-                </div>
+                <li>
+                    <i class="fas fa-th"></i>
+                    <div class="mega-box">
+                        <div class="menu-services">
+
+                            <div class="row">
+                                <ul class="menu-links">
+                                    <li><img src="{{url('images/logo.png')}}"></li>
+                                    <li><a href="">Health</a></li>
+                                    <li><a href="">Clothing</a></li>
+                                    <li><a href="">Education</a></li>
+                                    <li><a href="">Innovation</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="row">
+                                <ul class="menu-links">
+                                    <li><img src="{{url('images/house.png')}}"></li>
+                                    <li><a href="">Food</a></li>
+                                    <li><a href="">Security</a></li>
+                                    <li><a href="">Transport</a></li>
+                                    <li><a href="">Health</a></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </li>
+                
             </ul>
-        </nav>
-    </div>
+        </div>    
+    </nav>
+    
 
         @yield('content')
 
@@ -165,6 +176,8 @@
     });
 
    </script>
+   
+   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
 </body>
 </html>
