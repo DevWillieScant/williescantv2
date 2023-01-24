@@ -1,14 +1,22 @@
 @extends('main')
 @section('content')
     <div class="content">
-        <h1>Online Supermarket</h1>
-        <img src="{{url('images/logo.png')}}" alt="Not Found" class="logo2">
-        <div class="search">
+        <div>
+          <h1>Online Supermarket</h1>
+        </div>
+        <div>
+          <img src="{{url('images/logo.png')}}" alt="Not Found" class="logo2">
+        </div>
+        <div>
+          <div class="search">
             <form action="">
-                <input type="text" placeholder="Search">
-                <button type="submit"><i class="fas fa-search"></i></button>
+                <input type="search" class="input">
+                <label class="placeholder">Search</label>
+                <i class="fas fa-search"></i>
             </form> 
         </div>
+        </div>
     </div>  
+
 @endsection
 

@@ -4,105 +4,166 @@
 }
 body
 {
-    background: #ebe8e8;
+    background: #f1f1f2;
 }
-.navbar
-{
-    position: absolute;
-    height: 12%;
-    display: flex;
-    align-items: center;
-    padding: 0 5%;
-    background: #ffffff;
+
+nav{
+    background: #e6e7e8;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    height: 65px;
+    line-height: 55px;
     top: 0;
     right: 0;
-    left: 0;
 }
+
+nav .navbar{
+    padding: 0 30px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .navbar .logo img
 {
     height: 50px;
 }
-.navbar nav
-{
-    flex: 1;
-    text-align: right;
+
+.navbar .nav-links{
+    display: inline-flex;
 }
-.navbar nav ul li
-{
+
+.nav-links li{
     list-style: none;
-    display: inline-block;
 }
-.navbar nav ul li a,
-.navbar nav ul li i
-{
+
+.nav-links li a,
+.nav-links li i{
+    color: #615e5e;
     text-decoration: none;
     font-size: 20px;
-    padding: 0 20px;
-    color: #615e5e;
+    padding: 10px 15px;
+    border-radius: 5px;
 }
-.navbar nav ul li a:hover,
-.navbar nav ul li i:hover
-{
+
+.nav-links li a:hover,
+.nav-links li i:hover{
     color: #a55b29;
 }
+
+.mega-box{
+    position: absolute;
+    top: 80px;
+    width: 20%;
+    right: 15px;
+    justify-content: right;
+    opacity: 0; 
+     visibility: hidden;
+}
+
+.nav-links li:hover .mega-box{
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.3s ease;
+} 
+
+
+.mega-box .menu-services{
+    background: #e6e7e8;
+    padding: 5px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.menu-services .row{
+    width: calc(7em * 1);
+    line-height: 30px;
+}
+
+.menu-services .row li img{
+    height: 50px;
+}
+
+
+.menu-services .row:nth-child(1),
+.menu-services .row:nth-child(2){
+    border-left: 0px;
+}
+
+.row .menu-links li{
+    padding: 0 20px;
+}
+
+.row .menu-links li a{
+    padding: 0 20px;
+    font-size: 17px;
+    display: block;
+}
+
 .content
 {
    position:absolute;
-    top: 20%;
-    left: 35%;
-    right: 0;
+   display: flex;
+   flex-direction: column;
+   width: 90%;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%,-50%);
+   text-align: center;
 }
 .content img
 {
-    margin-left: 20%;
+   align-items: center;
 }
 .content .logo2
 {
     width: 70px;
 }
-.content .search
+.search
 {
     margin-top: 30px;
-    margin-left: 2.5%;
+    margin-left: auto;
 }
 .content h1
 {
     font-size: 50px;
 }
-.content .search form input[type=text] 
-{
+.content .search .input {
     padding: 10px;
+    width: 100%;
+    max-width: 300px;
+    box-sizing: border-box;
+    outline: none;
+    border: 1px solid #615e5e;
+    background: none;
+    border-radius: 25px;
+}
+
+  .content .search .placeholder{
+    position: absolute;
+    margin-left: -20%;
+    margin-top: 10px;
     font-size: 14px;
-    border: none;
-    float: left;
-    width: 30%;
-    background: #f1f1f1;
-    border: 2px solid #615e5e;
-    border-top-left-radius: 25px;
-    border-bottom-left-radius: 25px;
-    text-align: center;
+    padding: 0 5px;
+    transition: 0.3s;
+    pointer-events: none;
+  }
+
+  .content .search .input:focus + .placeholder{
+    margin-top: -10px;
+    color: #a55b29;
+    background-color: #f1f1f2;
+  }
+
+  .content .search i{
+   position: absolute;
+   right: 40%;
+   margin-top: 10px;
+
   }
   
-  /* Style the submit button */
-   .content .search form button
-   {
-    float: left;
-    width: 13%;
-    padding: 10px;
-    background: #a55b29;
-    color: white;
-    font-size: 14px;
-    border: 2px solid #615e5e;
-    border-left:none; /* Prevent double borders */
-    cursor: pointer;
-    border-top-right-radius: 25px;
-    border-bottom-right-radius: 25px;
-  }
-  
-  .content .search form button:hover 
-  {
-    background: #615e5e;
-  }
   
   /* Clear floats */
   .content .search::after 
@@ -114,10 +175,11 @@ body
 .footer
 {
     position: absolute;
+    height: 6%;
     bottom: 0;
     left: 0;
     right: 0;
-    background: #ffffff;
+    background: #e6e7e8;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -128,18 +190,7 @@ body
     top: 20%;
     left: 37%;
 }
-.register
-{
-    position: absolute;
-    top: 20%;
-    left: 25%;
-}
-/* .register form .grid
-{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 90px;
-} */
+
 .login input,
 .modal-content input,
 .modal-content select
@@ -292,7 +343,7 @@ label::after
     height: 50px;
 }
 
-.close{
+.close, .exit{
    position: absolute;
     top: 0;
     right: 14px;

@@ -4,7 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <title>Willie Scant</title>
+    <link rel="manifest" href="{{url('images/site.webmanifest')}}">
+    <link rel="shortcut icon" href="{{url('images/favicon.ico')}}">
+    <link rel="icon" href="{{url('images/favicon.ico')}}" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{url('images/apple-touch-icon.png')}}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{url('images/favicon-32x32.png')}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{url('images/favicon-16x16.png')}}">
+    
+
     <link rel="stylesheet" href="{{url('css/style.css')}}">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,18 +21,46 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="navbar">
-        <div class="logo">
-            <a href="/"><img src="{{url('images/logo.png')}}" alt="Not Found"></a>
-        </div>
-        <nav>
-            <ul>
+    <nav>
+        <div class="navbar">
+            <div class="logo">
+                <a href="/"><img src="{{url('images/logo.png')}}" alt="Not Found"></a>
+            </div>
+            <ul class="nav-links">
                 <li><a href="#" id="login">LOGIN</a></li>
-                <li><a href="#" id="signup">SIGN UP</a></li>
-                <li><i class="fas fa-th"></i></li>
+                <li>
+                    <i class="fas fa-th"></i>
+                    <div class="mega-box">
+                        <div class="menu-services">
+
+                            <div class="row">
+                                <ul class="menu-links">
+                                    <li><img src="{{url('images/logo.png')}}"></li>
+                                    <li><a href="">Health</a></li>
+                                    <li><a href="">Clothing</a></li>
+                                    <li><a href="">Education</a></li>
+                                    <li><a href="">Innovation</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="row">
+                                <ul class="menu-links">
+                                    <li><img src="{{url('images/house.png')}}"></li>
+                                    <li><a href="">Food</a></li>
+                                    <li><a href="">Security</a></li>
+                                    <li><a href="">Transport</a></li>
+                                    <li><a href="">Health</a></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </li>
+                
             </ul>
-        </nav>
-    </div>
+        </div>    
+    </nav>
+    
 
         @yield('content')
 
@@ -39,7 +76,7 @@
         <img src="{{url('images/logo.png')}}" alt="Willie Scant">
 
         <h2>Registration Form</h2>
-        <form action="regUser" method="post">
+        <form action="{{route('registration')}}" method="post">
             @If(Session::has('success'))
             <div class="alert-message green">
                 {{Session::get('success')}}
@@ -53,7 +90,7 @@
             @csrf
             <div class="grid">
                 <label for="username">Username</label>
-                <input type="text" name="username" id="username" placeholder="Username" value="{{old('phone_number')}}" required><br>
+                <input type="text" name="username" id="username" placeholder="Username" value="{{old('username')}}" required><br>
                 <label for="phone_number">Phone Number</label>
                 <input type="text" name="phone_number" id="phone_number" placeholder="Phone Number" value="{{old('phone_number')}}" required><br>
                 <label for="email">Email</label>
@@ -71,11 +108,11 @@
     <div class="modal-bg">
      <div class="modal-content">
 
-        <div class="close">+</div>
+        <div class="exit">+</div>
         <img src="{{url('images/logo.png')}}" alt="Willie Scant">
 
         <h2>Login</h2>
-        <form action="logUser" method="post">
+        <form action="{{route('loginuser')}}" method="post">
             @If(Session::has('success'))
                 <div class="alert-message green">
                     {{Session::get('success')}}
@@ -92,26 +129,55 @@
             <label for="password">Password<span></span></label><br>
             <input type="password" placeholder="Password" name="password" value="{{old('password')}}" required><br>
             <button type="submit">Login</button><br>
+            <h2>Don't have an account? <a href="#" id="signup">Register</a> </h2>
         </form>
      </div>
    </div>
 
-   <script>
 
-    document.getElementById('signup').addEventListener('click', function(){
-        document.querySelector('.bg-modal').style.display = 'flex';
-    });
+
+   <script>
 
     document.getElementById('login').addEventListener('click', function(){
         document.querySelector('.modal-bg').style.display = 'flex';
     });
 
+    document.getElementById('signup').addEventListener('click', function(){
+        document.querySelector('.modal-bg').style.display = 'none';
+
+        document.querySelector('.bg-modal').style.display = 'flex';
+    });
+
+
+    // Closes the modals
     document.querySelector('.close').addEventListener('click', function()
     {
-        document.querySelector('.bg-modal, .modal-bg').style.display = 'none';
+        document.querySelector('.bg-modal').style.display = 'none';
+    });
+
+    document.querySelector('.exit').addEventListener('click', function()
+    {
+        document.querySelector('.modal-bg').style.display = 'none';
+    });
+
+    $(function (){
+        $('#signup').submit(function(e){
+            e.preventDefault();
+            let formData = $(this).serializeArray();
+            $.ajax({
+                method: "POST",
+                headers: {
+                    Accept: "application/json"
+                },
+                url: "{{route('registration')}}",
+                data: formData
+            })
+        })
     });
 
    </script>
+   
+   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
 </body>
 </html>
