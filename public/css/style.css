@@ -102,68 +102,65 @@ nav .navbar{
     display: block;
 }
 
-.content
-{
-   position:absolute;
-   display: flex;
-   flex-direction: column;
-   width: 90%;
-   top: 50%;
-   left: 50%;
-   transform: translate(-50%,-50%);
-   text-align: center;
-}
-.content img
-{
-   align-items: center;
-}
-.content .logo2
-{
-    width: 70px;
-}
-.search
-{
-    margin-top: 30px;
-    margin-left: auto;
-}
-.content h1
-{
-    font-size: 50px;
-}
-.content .search .input {
-    padding: 10px;
+.center-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  img {
+    margin-bottom: 20px;
+    height: 90px;
+  }
+  
+  .search-container {
+    position: relative;
     width: 100%;
-    max-width: 300px;
-    box-sizing: border-box;
-    outline: none;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    border-radius: 35px;
+  }
+  
+  input[type="text"] {
+    padding: 10px 40px 10px 10px;
+    width: 100%;
     border: 1px solid #615e5e;
     background: none;
-    border-radius: 25px;
-}
-
-  .content .search .placeholder{
-    position: absolute;
-    margin-left: -20%;
-    margin-top: 10px;
-    font-size: 14px;
-    padding: 0 5px;
-    transition: 0.3s;
-    pointer-events: none;
+    border-radius: 20px;
+    transition: all 0.3s ease-in-out;
+    position: relative;
   }
-
-  .content .search .input:focus + .placeholder{
-    margin-top: -10px;
+  
+  input[type="text"] + label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: #615e5e;
+    padding: 0 5px;
+    pointer-events: none;
+    transition: 0.3s ease-in-out;
+  }
+  
+  input[type="text"]:focus + label,
+  input[type="text"]:valid + label {
+    top: -10px;
+    font-size: 14px;
     color: #a55b29;
     background-color: #f1f1f2;
   }
-
-  .content .search i{
-   position: absolute;
-   right: 40%;
-   margin-top: 10px;
-
-  }
   
+  .search-container i {
+    position: absolute;
+    right: 10px;
+    font-size: 20px;
+  }
+
   
   /* Clear floats */
   .content .search::after 
