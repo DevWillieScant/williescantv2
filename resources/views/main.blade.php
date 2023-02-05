@@ -21,45 +21,39 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav>
-        <div class="navbar">
-            <div class="logo">
-                <a href="/"><img src="{{url('images/logo.png')}}" alt="Not Found"></a>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#" id="login">LOGIN</a></li>
-                <li>
-                    <i class="fas fa-th"></i>
-                    <div class="mega-box">
-                        <div class="menu-services">
-
-                            <div class="row">
-                                <ul class="menu-links">
-                                    <li><img src="{{url('images/logo.png')}}"></li>
-                                    <li><a href="">Health</a></li>
-                                    <li><a href="">Clothing</a></li>
-                                    <li><a href="">Education</a></li>
-                                    <li><a href="">Innovation</a></li>
-                                </ul>
-                            </div>
-
-                            <div class="row">
-                                <ul class="menu-links">
-                                    <li><img src="{{url('images/house.png')}}"></li>
-                                    <li><a href="">Food</a></li>
-                                    <li><a href="">Security</a></li>
-                                    <li><a href="">Transport</a></li>
-                                    <li><a href="">Health</a></li>
-                                </ul>
-                            </div>
-
-                        </div>
-                    </div>
-                </li>
-                
-            </ul>
-        </div>    
-    </nav>
+<nav class="navbar">
+  <div class="logo">
+    <img src="{{url('images/logo.png')}}" alt="Logo">
+  </div>
+  <div class="bars" onclick="toggleLinks()" id="bars">
+    <i class="fas fa-bars"></i>
+  </div>
+  <div class="links">
+    <a href="#" id="login">LOGIN</a>
+    <div class="dropdown">
+      <a href="#"><i class="fas fa-th"></i></a>
+      <div class="dropdown-content">
+        <header class="dropdown-header">Our Services</header>
+        <div class="dropdown-grid">
+          <div>
+            <a><img src="{{url('images/logo.png')}}"></a>
+            <a href="">Health</a>
+            <a href="">Clothing</a>
+            <a href="">Education</a>
+            <a href="">Innovation</a>
+          </div>
+          <div>
+            <a><img src="{{url('images/house.png')}}"></a>
+            <a href="">Food</a>
+            <a href="">Security</a>
+            <a href="">Transport</a>
+            <a href="">Health</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
     
 
         @yield('content')
@@ -129,7 +123,7 @@
             <label for="password">Password<span></span></label><br>
             <input type="password" placeholder="Password" name="password" value="{{old('password')}}" required><br>
             <button type="submit">Login</button><br>
-            <h2>Don't have an account? <a href="#" id="signup">Register</a> </h2>
+            <p>Don't have an account? <a href="#" id="signup">Register</a> <p>
         </form>
      </div>
    </div>
@@ -137,6 +131,11 @@
 
 
    <script>
+
+    document.getElementById('bars').addEventListener('click', function(){
+      document.querySelector('.links').style.display = 'block';
+      document.querySelector('.bars').style.display = 'none';
+    })
 
     document.getElementById('login').addEventListener('click', function(){
         document.querySelector('.modal-bg').style.display = 'flex';
