@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Main;
 
     Route::get('/', [Main::class, 'index']);
+    Route::get('/center', [Main::class, 'center']);
     Route::resource('users', Main::class);
     Route::get('/login', [Main::class, 'loginuser'])->middleware('alreadyLoggedIn');
     Route::get('/register', [Main::class, 'register'])->middleware('alreadyLoggedIn');
