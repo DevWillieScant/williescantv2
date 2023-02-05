@@ -16,6 +16,12 @@ class Main extends Controller
     {
         return view('index');
     }
+
+    public function center()
+    {
+        return view('center');
+    }
+ 
  
       public function message()
     {
