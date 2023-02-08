@@ -22,6 +22,7 @@
 </head>
 <body>
 <nav class="navbar">
+
   <div class="logo">
     <img src="{{url('images/logo.png')}}" alt="Logo">
   </div>
@@ -82,7 +83,7 @@
             </div>
             @endif
             @csrf
-            <div class="grid">
+            
                 <label for="username">Username</label>
                 <input type="text" name="username" id="username" placeholder="Username" value="{{old('username')}}" required><br>
                 <label for="phone_number">Phone Number</label>
@@ -92,7 +93,7 @@
                 <label for="password">Password</label>
                 <input type="password" name="password" id="password" placeholder="Password" value="{{old('password')}}" required><br>
                                     
-            </div>
+            
             <button type="submit">Sign Up</button><br>
         </form>
      </div>
@@ -131,12 +132,13 @@
 
 
    <script>
-
+    //responsible for bars when screen is >=768
     document.getElementById('bars').addEventListener('click', function(){
       document.querySelector('.links').style.display = 'block';
       document.querySelector('.bars').style.display = 'none';
     })
 
+    // responsible for popups
     document.getElementById('login').addEventListener('click', function(){
         document.querySelector('.modal-bg').style.display = 'flex';
     });

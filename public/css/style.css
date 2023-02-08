@@ -96,7 +96,7 @@ body
   .dropdown-content img {
     margin-bottom: 10px;
   }
-  
+  /* reponsive login and services */
   @media (max-width: 768px) {
     .navbar .links {
       display: none;
@@ -159,20 +159,25 @@ body
 
   }
   
+/* dropdown */
   @media (max-width: 768px) {
     .dropdown-content {
       display: none;
     }
     .navbar {
-      flex-direction: column;
+      /* flex-direction: column; */
       align-items: center;
+      /* padding: 0 20px; */
     }
     .navbar a {
       margin: 10px 0;
     }
     .navbar .dropdown {
-      display: block;
+      display:inline;
       margin: 20px 0;
+    }
+    .navbar .bars{
+      margin-right: 20px;
     }
   }
 
@@ -185,6 +190,8 @@ body
     flex-direction: column;
     align-items: center;
     text-align: center;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
   }
   
   img {
@@ -245,30 +252,23 @@ body
   }
 .footer
 {
-    position: absolute;
+    position: fixed;
     height: 6%;
     bottom: 0;
-    left: 0;
-    right: 0;
+    width: 100%;
     background: #e6e7e8;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.login
-{
-    position: absolute;
-    top: 20%;
-    left: 37%;
-}
 
-.login input,
 .modal-content input,
 .modal-content select
 {
     width: 50%;
     padding: 10px;
-    display: inline-block;
+    /* affects layout:alignment */
+    display: flex; 
     border: 2px solid #615e5e;
     margin: 15px auto;
     border-radius: 5px;
@@ -286,16 +286,8 @@ body
     margin: 10px 0;
     border-radius: 5px;
 }
-.login button
-{
-    width: 119%;
-    padding: 10px;
-    font-size: 16px;
-    background: #8e3500;
-    border: none;
-    border-radius: 5px;
-    color: #ffffff;
-}.modal-content button
+
+.modal-content button
 {
     width: 69%;
     padding: 10px;
@@ -305,16 +297,13 @@ body
     border-radius: 5px;
     color: #ffffff;
 }
-.login button:hover,
+
 .modal-content button:hover
 {
     background: #615e5e;
     border: none;
 }
-.login h1
-{
-    margin-left: 33%;    
-}
+
 .modal-content h1
 {
     margin-left: 17%;
@@ -325,11 +314,7 @@ body
     top: 70%;
     left: 37%;
 }
-label::after
-{
-    content:  " *";
-    color: #ff0000;
-}
+
 .dashboard
 {
     position: absolute;
@@ -392,22 +377,26 @@ label::after
     height: 100%;
     background-color: rgba(0, 0, 0, 0.7);
     position: absolute;
-    top: 0;
+    top: 30px;
     left: 0;
-    display: flex;
+    display:flexbox;
     justify-content: center;
     align-items: center;
     display: none;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+
 }
 
 .modal-content{
    width: 500px;
-   height: 500px;
-    background-color: white;
-    border-radius: 4px;
-    text-align: center;
-    padding: 20px;
-    position: relative;
+   /* affects height of modal content:alignment of login/reg */
+   height: auto;
+   background-color: white;
+   border-radius: 4px;
+   text-align: center;
+   padding: 20px;
+   position: absolute;
 }
 
 .modal-content img{
